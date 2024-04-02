@@ -9,7 +9,7 @@ export default function App() {
     <View style={styles.constainer}>
       <Greet name="Bruce Wayne" />
       <View style={[styles.box,styles.lightBlue]}>
-        <Text>Lightblue Box</Text>
+        <Text style={{borderRadius:5}}>Lightblue Box</Text>
       </View>
       <View style={[styles.box,styles.ligthgreen]}>
         <Text>Lightgreen Box</Text>
@@ -23,7 +23,17 @@ const styles = StyleSheet.create({
   box:{
     height:100,
     width:100,
-    padding:10
+
+    paddingVertical:20,
+    paddingHorizontal:10,
+    marginVertical:10,
+    borderWidth:2,
+    borderColor:"white",
+    // borderStyle:"solid"  //this is the default style
+    borderRadius:5 
+    // you could use the border radius for the view and that will work for both android and i phone 
+    // but radius for the text component is only work in android
+
   },
   lightBlue:{backgroundColor:"lightblue"},
   ligthgreen:{backgroundColor:"lightgreen"}
