@@ -7,11 +7,13 @@ export default function App() {
   const [modal, setModal] = useState(false);
   return (
     <View style={styles.constainer}>
-      <Greet name="Bruce Wayne" />
-      <View style={[styles.box,styles.lightBlue,styles.boxShadow]}>
-        <Text style={{borderRadius:5}}>Lightblue Box</Text>
+      <View style={styles.darkBackground}>
+        <Greet name="Bruce Wayne" styles={styles}/>
       </View>
-      <View style={[styles.box,styles.ligthgreen,styles.androidShadow]}>
+      <View style={[styles.box, styles.lightBlue, styles.boxShadow]}>
+        <Text style={{ borderRadius: 5 }}>Lightblue Box</Text>
+      </View>
+      <View style={[styles.box, styles.ligthgreen, styles.androidShadow]}>
         <Text>Lightgreen Box</Text>
       </View>
     </View>
@@ -20,40 +22,40 @@ export default function App() {
 
 const styles = StyleSheet.create({
   constainer: { flex: 1, backgroundColor: "plum", padding: 50 },
-  box:{
-    height:250,
-    width:250,
+  darkBackground: { backgroundColor: "black" },
+  darkTextColor :{color:"white"},
+  fontSize:{fontWeight:"600"},
+  box: {
+    height: 250,
+    width: 250,
 
-    paddingVertical:20,
-    paddingHorizontal:10,
-    marginVertical:10,
-    borderWidth:2,
-    borderColor:"white",
+    paddingVertical: 20,
+    paddingHorizontal: 10,
+    marginVertical: 10,
+    borderWidth: 2,
+    borderColor: "white",
     // borderStyle:"solid"  //this is the default style
-    borderRadius:5 ,
-    // you could use the border radius for the view and that will work for both android and i phone 
+    borderRadius: 5,
+    // you could use the border radius for the view and that will work for both android and i phone
     // but radius for the text component is only work in android
   },
 
-  lightBlue:{backgroundColor:"lightblue"},
-  ligthgreen:{backgroundColor:"lightgreen"},
+  lightBlue: { backgroundColor: "lightblue" },
+  ligthgreen: { backgroundColor: "lightgreen" },
 
-  boxShadow:{
-    shadowColor:"#33333",
-    shadowOffset:{
-      width:6,
-      height:6,
+  boxShadow: {
+    shadowColor: "#33333",
+    shadowOffset: {
+      width: 6,
+      height: 6,
     },
-    shadowOpacity:.6,
-    shadowRadius:4
+    shadowOpacity: 0.6,
+    shadowRadius: 4,
   },
   //using the box shadow will only work on the i phone for androd you need to use something else
 
-  androidShadow:{
-    elevation:20
+  androidShadow: {
+    elevation: 20,
   },
-  //using the elevation will help us to bring he shadow for the android phones 
-
-
-
+  //using the elevation will help us to bring he shadow for the android phones
 });
